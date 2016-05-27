@@ -1,3 +1,7 @@
+// This code is copyright - GPL v2 License applies
+// tuxbox.guru@gmail.com
+// This code is a complete example and its hacky as heck! 
+// Its prime example is how to do stuff!
 
 #ifndef __KERNEL__
 #define __KERNEL__
