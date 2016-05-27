@@ -5,9 +5,9 @@ information on what interface the special PING message touched.
 
 Building - just run MAKE 
 
-sudo ./newping 192.168.2.113
-waiting on port 9090
-22 90 71 27 85 F4 
+sudo ./newping 192.168.2.113<br>
+waiting on port 9090<br>
+22 90 71 27 85 F4<br> 
 PING INGRESS 586391A6B89E 2290712785F4 0469F8EAE6E3 eth1	6.541 ms
 PING EGRESS  586391A6B89E 108DD7BE170C 0050B6032522 eth2	6.581 ms
 RESP INGRESS 586391A6B89E 108DD7BE170C 0050B6032522 eth2	9.551 ms
