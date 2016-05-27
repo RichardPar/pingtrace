@@ -2,7 +2,12 @@
 A simple Netfilter-Bridge utility that shows the MAC addresses and some other
 information on what interface the special PING message touched.
 
+This only works with Linux Bridges as it intercepts the FORWARD and POSTROUTING rules within the kernel
+
+
 Lessons here : How to send a UDP packet from within the linux Kernel, Modify a packet in NETFILTER and Create a custom PING message
+
+
 
 
 Building - just run MAKE 
