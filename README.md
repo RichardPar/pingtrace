@@ -12,7 +12,7 @@ Lessons here : How to send a UDP packet from within the linux Kernel, Modify a p
 
 Building - just run MAKE 
 
-sudo ./newping 192.168.2.113<br>
+sudo ./superping 192.168.2.113<br>
 waiting on port 9090<br>
 22 90 71 27 85 F4<br> 
 PING INGRESS 586391A6B89E 2290712785F4 0469F8EAE6E3 eth1	6.541 ms<br>
