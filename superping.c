@@ -56,7 +56,17 @@ pthread_t   udpthread;
 char  cleanup;
 
 void getRandomSequence(char *outSeq, int len); 
-
+void printMacAddress(char *header, char *mac)
+{
+    int z;
+    printf("%s ",header);
+    for (z=0;z<6;z++)
+      {
+       printf("%2.2x",(unsigned char)mac[z]);
+       if (z < 5)
+           printf(":");
+      }
+}
 
 void *udp_listen_function( void *ptr )
 {
@@ -118,24 +128,9 @@ void *udp_listen_function( void *ptr )
                 printf("EGRESS  ");
             }
 
-
-            int z;
-            for (z=0;z<6;z++)
-            {
-                printf("%2.2X",(unsigned char)pl->UID[z]);
-            }
-            
-            printf(" ");
-            for (z=0;z<6;z++)
-            {
-                printf("%2.2X",(unsigned char)pl->RUID[z]);
-            }
- 
-            printf(" ");
-            for (z=0;z<6;z++)
-            {
-                printf("%2.2X",(unsigned char)pl->MAC[z]);
-            }
+            printMacAddress("",pl->UID);
+            printMacAddress("",pl->RUID);
+            printMacAddress("",pl->MAC);
 
             printf(" %s",pl->DEVICE);
             printf("\t%g ms",delta);    
@@ -225,12 +220,9 @@ static void ping(const char *host, unsigned short id, unsigned short seq)
   char rnd[6];
   getRandomSequence(rnd,6);
   memcpy(packet+8,rnd,6);
-  
-  
-  int a;
-  for (a=0;a<6;a++)
-      printf("%2.2X ",(unsigned char)rnd[a]);
-  printf("\r\n");
+
+  printMacAddress("Original Token->",rnd);
+  printf("\r\n");  
   
   pkt->icmp_cksum = in_cksum((unsigned short *) pkt, sizeof(packet));
    
