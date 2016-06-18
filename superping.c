@@ -62,9 +62,7 @@ void printMacAddress(char *header, char *mac)
     printf("%s ",header);
     for (z=0;z<6;z++)
       {
-       printf("%2.2x",(unsigned char)mac[z]);
-       if (z < 5)
-           printf(":");
+       printf("%2.2x%s",(unsigned char)mac[z],z<5 ? ":" : "");
       }
 }
 
